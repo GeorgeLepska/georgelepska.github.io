@@ -1,15 +1,12 @@
 ---
 layout: post
-title: "Can I Catch Larger Fish Through Data Analysis?"
+title: "*Can I Catch Larger Fish Through Data Analysis?* 
+subtitle: "*From 5 years of an Expert Fisherman's Logbook*"
 date: 2026-01-20
 author: George Lepska
 categories: [data-analysis, fishing]
 tags: [striped-bass, logistic-regression, fishbrain]
 ---
-
-# Can I Catch Larger Fish Through Data Analysis?
-
-*From 5 years of an Expert Fisherman's Logbook*
 
 ![Comparison photo](https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/headline-final.jpg?w=961)
 *Can I catch larger fish through data analysis? left: me, right: OuttaBait*
