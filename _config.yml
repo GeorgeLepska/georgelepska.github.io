@@ -1,5 +1,4 @@
-title: Fishing Data Analysis
-description: Using data science to catch bigger striped bass in New England waters
+title: George Lepskas Blog
 author: George Lepska
 email: your.email@example.com # optional
 
@@ -16,13 +15,7 @@ minima:
 # instagram_username: your_instagram
 # linkedin_username: your_linkedin
 
-# Show post excerpts on home page
-show_excerpts: true
 
-# Header pages - controls what shows in navigation
-header_pages:
-  - about.md
-  - portfolio.md
 
 # Google Analytics (optional)
 # google_analytics: UA-NNNNNNNN-N
