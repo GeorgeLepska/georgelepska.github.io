@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Can I Catch Larger Fish Through Data Analysis?"
-subtitle: "From 5 years of an Expert Fisherman's Logbook"
+title: "*Can I Catch Larger Fish Through Data Analysis?* 
+subtitle: "*From 5 years of an Expert Fisherman's Logbook*"
 date: 2026-01-20
 author: George Lepska
 categories: [data-analysis, fishing]
