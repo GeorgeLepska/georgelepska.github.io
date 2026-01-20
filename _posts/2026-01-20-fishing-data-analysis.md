@@ -8,6 +8,11 @@ categories: [data-analysis, fishing]
 tags: [striped-bass, logistic-regression, fishbrain]
 ---
 
+<p style="margin-top:-0.75rem; font-size:0.95rem; color:#777;">
+From five years of an expert fisherman’s logbook
+</p
+
+
 ![Comparison photo](https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/headline-final.jpg?w=961)
 *Can I catch larger fish through data analysis? left: me, right: OuttaBait*
 
