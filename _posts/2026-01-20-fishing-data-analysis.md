@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Predicting Trophy Striped Bass Conditions 
+title: *Predicting Trophy Striped Bass Conditions*
+description: *from five years of an expert fisherman’s logbook*
 date: 2026-01-20
 author: George Lepska
 categories: [data-analysis, fishing]
