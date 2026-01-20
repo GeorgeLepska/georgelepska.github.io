@@ -1,20 +1,24 @@
 ---
 layout: post
 title: "Predicting Trophy Striped Bass Conditions"
-description: "From five years of an expert fisherman’s logbook"
+description: "From five years of an expert fisherman's logbook"
 date: 2026-01-20
 author: George Lepska
 categories: [data-analysis, fishing]
 tags: [striped-bass, logistic-regression, fishbrain]
 ---
 
-![Comparison photo](https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/headline-final.jpg?w=961)
-*Can I catch larger fish through data analysis? left: me, right: OuttaBait*
+<div style="text-align: center;">
+  <img src="https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/headline-final.jpg?w=961" alt="Comparison photo" style="max-width: 100%;">
+  <p style="font-size: 0.85em; font-style: italic; color: #666; margin-top: 0.5em;">Can I catch larger fish through data analysis? left: me, right: OuttaBait</p>
+</div>
 
 Fishing has always been a passionate hobby of mine. I've been fishing for about 10 years. My favorite fish to go after are striped bass - New England's biggest marine species.
 
-![Me holding a striped bass](https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/img_2638.jpeg?w=1024)
-*Me holding a 24" Striper caught 7/17/2017*
+<div style="text-align: center;">
+  <img src="https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/img_2638.jpeg?w=1024" alt="Me holding a striped bass" style="max-width: 400px;">
+  <p style="font-size: 0.85em; font-style: italic; color: #666; margin-top: 0.5em;">Me holding a 24" Striper caught 7/17/2017</p>
+</div>
 
 However, there's one problem - my pb is only 29"; clearly there's something I can improve.
 
@@ -28,8 +32,10 @@ The model incorporates 10 variables: Fish length, fishing method (trolling, cast
 
 OuttaBait's average striped bass (striper) is 33.25" with a min of 17" and a max of 49.25". Figure 1 shows the distribution of Striped bass length.
 
-![Striped bass length distribution](https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/striper_histogram.png?w=1024)
-*Figure 1: striped bass length distribution histogram illustrating the number of catches below and above the 75th percentile (n=290). Fish above the 75% percentile were classified as "trophy" fish*
+<div style="text-align: center;">
+  <img src="https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/striper_histogram.png?w=1024" alt="Striped bass length distribution" style="max-width: 100%;">
+  <p style="font-size: 0.85em; font-style: italic; color: #666; margin-top: 0.5em;">Figure 1: striped bass length distribution histogram illustrating the number of catches below and above the 75th percentile (n=290). Fish above the 75% percentile were classified as "trophy" fish</p>
+</div>
 
 A vast majority of the fish are between 25 and 40 inches, with approximately 28% being over 37 inches. We are dealing with a fishing pro.
 
@@ -45,11 +51,15 @@ To identify optimal variables for my model, I performed both likelihood ratio te
 
 Preliminary exploration indicated that water temperature and method were the strongest predictors of fish length, shown by figures 2 and 3.
 
-![Box plot of fishing methods](https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/image-3.png?w=1024)
-*Figure 2: Box plot showing the relationship between striped bass length and fishing methods - casting, trolling, and other techniques. Trolling has larger fish on average than casting and other.*
+<div style="text-align: center;">
+  <img src="https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/image-3.png?w=1024" alt="Box plot of fishing methods" style="max-width: 100%;">
+  <p style="font-size: 0.85em; font-style: italic; color: #666; margin-top: 0.5em;">Figure 2: Box plot showing the relationship between striped bass length and fishing methods - casting, trolling, and other techniques. Trolling has larger fish on average than casting and other.</p>
+</div>
 
-![Scatterplot of water temperature](https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/image-4.png?w=1024)
-*Figure 3: scatterplot showing the relationship between striper length and water temperature, highlighting seasonal variations. Larger fish are caught during summer, when water is warmer.*
+<div style="text-align: center;">
+  <img src="https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/image-4.png?w=1024" alt="Scatterplot of water temperature" style="max-width: 100%;">
+  <p style="font-size: 0.85em; font-style: italic; color: #666; margin-top: 0.5em;">Figure 3: scatterplot showing the relationship between striper length and water temperature, highlighting seasonal variations. Larger fish are caught during summer, when water is warmer.</p>
+</div>
 
 In figure 2, trolling has a far higher average than the other two methods. Figure 3 tells a similar story - the largest fish are caught in the summer when water temps are warmest. Both the fishing method and water temperature play crucial roles in catching trophy fish.
 
@@ -66,7 +76,7 @@ What about the other variables? Likelihood Ratio Tests were then performed in ta
 | Moon Phase | 0.46 |
 | Barometric Pressure | 0.72 |
 
-*Results of Likelihood Ratio Tests. All additional variables above the statistically significant threshold (p < 0.05)*
+<p style="font-size: 0.85em; font-style: italic; color: #666; text-align: center;">Results of Likelihood Ratio Tests. All additional variables above the statistically significant threshold (p < 0.05)</p>
 
 No additional variable reached conventional statistical significance (p-value < 0.05). However, weather showed the strongest marginal contribution and was retained for further evaluation.
 
@@ -82,7 +92,7 @@ Following the likelihood ratio test, AUC (area under the curve) comparisons were
 | Model 4 | Model 3 + Wind Speed | 0.749 |
 | Model 5 | Model 4 + Wind Direction | 0.750 |
 
-*AUC Comparisons Chart across 5 models. Model 2 has the highest AUC, therefore making it the best selection for the final model*
+<p style="font-size: 0.85em; font-style: italic; color: #666; text-align: center;">AUC Comparisons Chart across 5 models. Model 2 has the highest AUC, therefore making it the best selection for the final model</p>
 
 Boom! Model 2 is the winner with an AUC of 0.786.
 
@@ -90,8 +100,10 @@ Boom! Model 2 is the winner with an AUC of 0.786.
 
 What does a 0.786 AUC mean? This is best visualized using a ROC (Receiver Operating Characteristic) curve in Figure 4. The ROC curve plots the true positive rate (sensitivity) against the false positive rate (specificity) across all classification thresholds.
 
-![ROC curve](https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/image-9.png?w=1024)
-*Figure 4: ROC plot. model is above red dotted line (AUC 0.5)*
+<div style="text-align: center;">
+  <img src="https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/image-9.png?w=1024" alt="ROC curve" style="max-width: 100%;">
+  <p style="font-size: 0.85em; font-style: italic; color: #666; margin-top: 0.5em;">Figure 4: ROC plot. model is above red dotted line (AUC 0.5)</p>
+</div>
 
 The model achieved an AUC of 0.786, indicating ability in the acceptable-to-good range (0.7-0.8). This means if I chose one trophy from the test and one non-trophy from the test, the model will correctly rank it 79% of the time.
 
@@ -106,7 +118,7 @@ Our model was then used on the 20% (58 fish) from the test set. The confusion ma
 | **Actual: Not Trophy** | 36 | 6 |
 | **Actual: Trophy** | 11 | 5 |
 
-*Confusion matrix - overall accuracy: 70.7%. correctly classified 36/47 non-trophy and 5/11 trophy fish, with a total of 41/58*
+<p style="font-size: 0.85em; font-style: italic; color: #666; text-align: center;">Confusion matrix - overall accuracy: 70.7%. correctly classified 36/47 non-trophy and 5/11 trophy fish, with a total of 41/58</p>
 
 The model correctly predicted 36 non-trophy fish and 5 trophy fish, and incorrectly predicted 11 non-trophy fish and 6 trophy fish, giving a score of 41/58 or 70.7%. Not bad.
 
@@ -125,12 +137,14 @@ So... what factors affect catching a trophy fish? The final model quantifies the
 | Overcast Weather | 0.77 | 2.17 | 0.0468 * |
 | Rainy Weather | 0.52 | 1.68 | 0.3517 |
 
-*Significance Codes: \*\*\* p<0.001, \* p<0.05. Water temp, trolling and overcast are statistically significant predictors of striper length*
+<p style="font-size: 0.85em; font-style: italic; color: #666; text-align: center;">Significance Codes: *** p<0.001, * p<0.05. Water temp, trolling and overcast are statistically significant predictors of striper length</p>
 
 Water temperature, trolling, and overcast weather had statistically significant effects on striper length, but by how much? Figure 5 shows us to what degree each variable affects fish length.
 
-![Effect sizes](https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/practical_effects2.png?w=1024)
-*Figure 5: Effect sizes of water temp, method and overcast. water temp from 50-75 degrees 12.2x odds of trophy fish, casting -> trolling 5.5x the odds of trophy fish, clear -> overcast 2.2x the odds of trophy fish.*
+<div style="text-align: center;">
+  <img src="https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/practical_effects2.png?w=1024" alt="Effect sizes" style="max-width: 100%;">
+  <p style="font-size: 0.85em; font-style: italic; color: #666; margin-top: 0.5em;">Figure 5: Effect sizes of water temp, method and overcast. water temp from 50-75 degrees 12.2x odds of trophy fish, casting -> trolling 5.5x the odds of trophy fish, clear -> overcast 2.2x the odds of trophy fish.</p>
+</div>
 
 Since water temp is a quantitative variable and method and weather are categorical, they get interpreted differently. For water temp, each 1°F increase multiplies odds of catching a trophy by 1.1 (1.1 odds ratio), so going from 50°F to 75°F multiplies odds by 12.2x.
 
@@ -140,8 +154,10 @@ For method and weather, switching from casting to trolling multiplies the odds o
 
 Using the model's odds ratios, we can estimate the probability of catching a trophy fish under each combination of method, weather, and water temp from 50-75°F with Figure 6.
 
-![Scenarios chart](https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/image-30.png?w=1024)
-*Figure 6: Scenarios chart of each combination of method, weather, and water temp from 50-75°F. high temp, overcast, and trolling creates the best chance of catching a trophy fish.*
+<div style="text-align: center;">
+  <img src="https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/image-30.png?w=1024" alt="Scenarios chart" style="max-width: 100%;">
+  <p style="font-size: 0.85em; font-style: italic; color: #666; margin-top: 0.5em;">Figure 6: Scenarios chart of each combination of method, weather, and water temp from 50-75°F. high temp, overcast, and trolling creates the best chance of catching a trophy fish.</p>
+</div>
 
 The best scenario - 75°F water temp, trolling, and overcast - has an 80.5% success rate, while the worst scenario - 50°F water temp, casting, and clear - has a 3.1% success rate. What a difference!
 
@@ -163,14 +179,18 @@ These limitations provide insight for future work, with an emphasis on increased
 
 While the model did not capture lure selection, I created a visualization for the top 5 lures OuttaBait used in 2025 based on method, season, and frequency.
 
-![Lure comparisons](https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/image-19.png?w=1024)
-*Figure 7: Bar chart of lure comparisons*
+<div style="text-align: center;">
+  <img src="https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/image-19.png?w=1024" alt="Lure comparisons" style="max-width: 100%;">
+  <p style="font-size: 0.85em; font-style: italic; color: #666; margin-top: 0.5em;">Figure 7: Bar chart of lure comparisons</p>
+</div>
 
 The red tube is the most used lure, also, it is the only lure used for trolling in the summer. The tube troller is the best lure for catching trophies.
 
 Here are the lures:
 
-![Top 5 lures](https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/top-5-lures-final-3.png?w=948)
+<div style="text-align: center;">
+  <img src="https://glepska-pjtwf.wordpress.com/wp-content/uploads/2026/01/top-5-lures-final-3.png?w=948" alt="Top 5 lures" style="max-width: 100%;">
+</div>
 
 ## Conclusion
 
