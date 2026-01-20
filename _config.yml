@@ -1,8 +1,7 @@
-title: Your Blog Name
+title: Predicting Trophy Striped Bass Conditions
 description: A blog about fishing and data analysis
 author: Your Name
-theme: minima
-permalink: /:year/:month/:day/:title/
+
 theme: jekyll-theme-minimal
-# Optional settings
+permalink: /:year/:month/:day/:title/
 show_excerpts: true
