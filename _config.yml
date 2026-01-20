@@ -20,4 +20,8 @@ minima:
 # Google Analytics (optional)
 # google_analytics: UA-NNNNNNNN-N
 
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
