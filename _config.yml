@@ -1,7 +1,8 @@
-title: Predicting Trophy Striped Bass Conditions
-description: A blog about fishing and data analysis
-author: Your Name
+title: Your Blog Name 
+description: A blog about fishing and data analysis 
+author: Your Name 
+theme: minima 
+permalink: /:year/:month/:day/:title/ 
 
-theme: minima
-permalink: /:year/:month/:day/:title/
-show_excerpts: true
+# Optional settings
+show_excerpts:%20true
