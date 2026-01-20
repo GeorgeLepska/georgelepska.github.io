@@ -3,6 +3,6 @@ description: A blog about fishing and data analysis
 author: Your Name
 theme: minima
 permalink: /:year/:month/:day/:title/
-
+theme: jekyll-theme-minimal
 # Optional settings
 show_excerpts: true
